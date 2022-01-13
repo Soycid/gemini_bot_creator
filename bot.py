@@ -7,17 +7,20 @@ import toml
 # import utils.sentences
 
 BOT_IMAGE_URL = "https://res.cloudinary.com/jerrick/image/upload/f_jpg,q_auto,w_720/bqyxdj35vanus0nc6ott.jpg"
-BOT_PERSONALITY = None 
+BOT_PERSONALITY = "w.toml" 
 SIMILARITY_THRESHOLD = 0.95
 USE_SIMILARITY = False
 USE_TIMED_RESPONSE = False
 SWITCH_CONSTANT = 5
 # api = "neuro"
 class Replica(ChaiBot):
+#    def __init__(self,personality=BOT_PERSONALITY):
+#        self.load_personality(personality=personality)
+
     def setup(self):
         self.logger.info("Setting up...")
         self.load_personality() 
-    def load_personality(self,personality=None):
+    def load_personality(self,personality=BOT_PERSONALITY):
         self.response_count = 0
         if personality != None: 
             self.personality=toml.load(personality)

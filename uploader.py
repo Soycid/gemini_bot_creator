@@ -2,7 +2,7 @@ from chai_py import Metadata, package, upload_and_deploy, wait_for_deployment
 from chai_py import display_logs, get_logs
 from chai_py import share_bot
 from chai_py.auth import set_auth
-
+import make_qr
 from bot import Replica, BOT_PERSONALITY
 import toml
 from chai_py.defaults import GUEST_UID, GUEST_KEY
@@ -34,5 +34,5 @@ bot_uid = upload_and_deploy(
 )
 
 wait_for_deployment(bot_uid)
-
-share_bot(bot_uid)
+make_qr(bot_uid)
+#share_bot(bot_uid)
